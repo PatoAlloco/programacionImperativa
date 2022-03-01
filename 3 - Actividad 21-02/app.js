@@ -24,4 +24,18 @@ ayuda = cajonPantalones;
 cajonPantalones = cajonRemeras;
 cajonRemeras = ayuda;
 
+function tengoClases(dia) {
+	switch (dia) {
+    	case "lunes":
+		case "miércoles":
+		case "viernes":
+			console.log("tenés clases");
+			break;
+			
+		default:
+			console.log("no tenés clases");
+			break;	
+	}
+}
+tengoClases("jueves");
 
