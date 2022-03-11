@@ -156,7 +156,115 @@ function sumaNaturales(){
     }
     console.log(sum);
 }
-sumaNaturales();
+//sumaNaturales();
+
+
+
+//////////ARRAYS
+
+/**A partir de un array de correos, recorrerlo para corroborar si son válidos. Para ello, por el momento, debemos buscar el carácter “@” en cada elemento y agregar aquellos que lo tengan al array de correos admitidos. En caso de no encontrar el carácter, se deberá agregar al array de correos descartados.
+Desarrollar una función que realice la verificación de cada elemento del array de correos pendientes. En caso de validar, agregar al arrayCorreoAdmitidos. Caso contrario, agregar al arrayCorreoDescartados (vaciar el array de correos pendientes).
+Mostrar por pantalla la cantidad y los elementos de cada array.
+ */
+
+let correosPendiente = ['patoalloco@hotmail.com','soneonf%hotmail.com','ndfnefnb@flkvgmflomv.com', 'dmjfdjk@ddkdjk.com', 'sjsdjsjs$vcjsj.com'];
+function verificarCorreos(lista){
+    let validos = [];
+    let invalidos = [];
+    for(i = 0; i <= lista.length - 1; i++){
+        if(lista[i].indexOf('@') == -1){
+            invalidos.push(lista[i]);
+        }else{
+            validos.push(lista[i]);
+        }
+    }
+    console.log('Validos: ' + validos);
+    console.log('Invalidos: ' + invalidos);
+}
+//verificarCorreos(correosPendiente);
+
+/**Queremos que un usuario pueda ingresar su correo y el sistema lo valide directamente, para luego agregarlo al array de correos admitidos o bien que devuelva un mensaje diciendo que no es correcto, con la posibilidad de que lo ingrese nuevamente. */
+
+/*let correo = prompt('Ingrese su correo: ');
+while(correo.indexOf('@') == -1){
+    correo = prompt('Correo invalido! Ingrese nuevamente: ');
+}*/
+
+
+//////////////////  clase array y string jueves 10  /////////////////////
+
+//pagina 1
+/**A. Acceder a elementos específicos de un array.
+B. Modificar cada uno de sus elementos e imprimirlos.
+C. Agregar elementos a un array.
+D. Extraer elementos de un array.
+E. Comparar elementos de un array con los elementos de otro. */
+
+let colec = [0,1,2,36,58,456,745,2];
+let aaa = colec[4];
+colec.push(4,5);
+let ultimo = colec.pop();
+colec.shift();
+colec.unshift(5);
+
+//pagina 2
+/** 1 - devielve undefined xq esta mal declarado el length
+ * 2 - ironman
+ * 3 - un string cualquiera
+ */
+
+//pagina 3
+let peliculas = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"];
+let animadas = ["toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite"]
+console.log(peliculas[4]);
+
+function pasarMayuscula(lista){
+    let peliEnMayuscula = [];
+    for(i = 0; i <= lista.length -1; i++){
+        peliEnMayuscula.push(lista[i].toUpperCase());
+    }
+    return peliEnMayuscula;
+}
+
+let juego = animadas.pop();
+function unirArrays(uno, dos){    
+    for(i = 0; i <= dos.length -1; i++){
+        uno.push(dos[i]);
+    }
+    return pasarMayuscula(uno);
+}
+console.log(unirArrays(peliculas, animadas));
+
+const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
+const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5];
+
+function compara(uno, dos){
+    let suma = 0;
+    for(i = 0; i <= dos.length -1; i++){
+        if(uno[i] == dos[i]){
+            console.log('En Asia y Europa coinciden. Calificacion: ' + uno[i]);
+        }else{
+            suma++;
+            console.log('En Asia y Europa No coinciden. Clificaciones: ' + uno[i] + ' y ' + dos[i]);
+        }        
+    }
+    if(suma != 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+compara(asiaScores, euroScores);
+
+
+
+
+
+
+
+
+
 
 
 
